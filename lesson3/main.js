@@ -8,10 +8,17 @@ let addExpenses = prompt(
   "Квартплата, проездной, кредит"
 );
 let credit = confirm("Есть ли у вас депозит в банке?");
-let expenses1 = prompt("Введите обязательную статью расходов?"),
-  amount1 = prompt("Во сколько это обойдется?"),
-  expenses2 = prompt("Введите обязательную статью расходов?"),
-  amount2 = prompt("Во сколько это обойдется?");
+let expenses1 = prompt("Введите обязательную статью расходов?");
+let amount1 = prompt("Во сколько это обойдется?");
+//проверка на ввод только чисел
+let numCheck = /^[0-9]+$/g;
+if (numCheck.test(amount1)) {
+  let expenses2 = prompt("Введите обязательную статью расходов?");
+} else {
+  alert(" Введите число");
+}
+
+let amount2 = prompt("Во сколько это обойдется?");
 let budgetMonth = parseInt(money - amount1 - amount2);
 alert("ваш ежемесячный бюджет  " + budgetMonth);
 let missionPeriod = mission / budgetMonth;
